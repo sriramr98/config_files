@@ -1,3 +1,6 @@
+# See https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#how-do-i-initialize-direnv-when-using-instant-prompt
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -90,3 +93,22 @@ alias tf="terraform"
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+#export PATH="$PATH:/Users/sriram.ramasamy/go/bin"
+export GOPRIVATE="github.com/hashicorp"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(zoxide init zsh)"
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
+eval "$(goenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sriram.ramasamy/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sriram.ramasamy/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sriram.ramasamy/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sriram.ramasamy/google-cloud-sdk/completion.zsh.inc'; fi
