@@ -1,3 +1,5 @@
 .git
 .gitignore
 script.sh
+.*\.log
+README.md

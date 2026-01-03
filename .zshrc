@@ -104,6 +104,7 @@ alias zs="vi ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias ls="eza"
 alias gs="git status"
+alias vi="nvim"
 
 bindkey -s '^Xgc' 'git commit -am ""\C-b'
 
@@ -114,5 +115,3 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
-
-. "$HOME/.local/bin/env"
